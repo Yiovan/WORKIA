@@ -72,6 +72,24 @@ Workia is a full-stack application that takes a CV (PDF or DOCX), extracts its c
 
 You need two terminals running simultaneously — one for the backend, one for the frontend.
 
+### Option A — Docker (recommended)
+
+```bash
+# Copy and fill your API key first
+# backend/.env  →  GEMINI_API_KEY=AIzaSy...
+
+docker compose up --build
+```
+
+- Frontend: `http://localhost`
+- Backend API: `http://localhost:8000`
+
+That's it. Both services start, the frontend proxies `/api` calls to the backend automatically.
+
+---
+
+### Option B — Local dev
+
 ### 1 — Backend
 
 ```bash
@@ -126,17 +144,23 @@ The free tier includes 15 requests/min and 1M tokens/day — more than enough.
 
 ```
 workia/
+├── docker-compose.yml       # Levanta todo con un comando
 ├── backend/
-│   ├── main.py          # FastAPI app, /api/analyze endpoint
-│   ├── cv_parser.py     # Text extraction + Gemini AI analysis + job scoring
-│   ├── job_scraper.py   # Async parallel job search across platforms
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── main.py              # FastAPI app, /api/analyze endpoint
+│   ├── cv_parser.py         # Text extraction + Gemini AI analysis + job scoring
+│   ├── job_scraper.py       # Async parallel job search across platforms
 │   ├── requirements.txt
-│   └── .env             # GEMINI_API_KEY goes here (never commit this)
+│   └── .env                 # GEMINI_API_KEY goes here (never commit this)
 │
 └── frontend/
+    ├── Dockerfile
+    ├── .dockerignore
+    ├── nginx.conf           # Serves SPA + proxies /api to backend
     ├── src/
-    │   ├── App.jsx      # Full UI: landing page + upload flow + dashboard
-    │   └── App.css      # Styles
+    │   ├── App.jsx          # Full UI: landing page + upload flow + dashboard
+    │   └── App.css
     └── index.html
 ```
 

@@ -321,7 +321,8 @@ function AppSection({ appRef }) {
     formData.append('file', selectedFile)
 
     try {
-      const response = await fetch('http://localhost:8000/api/analyze', {
+      const apiBase = import.meta.env.VITE_API_URL || ''
+      const response = await fetch(`${apiBase}/api/analyze`, {
         method: 'POST',
         body: formData,
       })
