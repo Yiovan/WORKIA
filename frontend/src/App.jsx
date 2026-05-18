@@ -3,7 +3,7 @@ import 'material-symbols/outlined.css'
 
 function Icon({ name, size = 24, color, className = '' }) {
   return (
-    <span 
+    <span
       className={`material-symbols-outlined ${className}`}
       style={{ fontSize: size, color: color, lineHeight: 1 }}
     >
@@ -49,10 +49,10 @@ function Hero({ onCTAClick }) {
 
       <div className="hero-actions">
         <button className="btn-primary" onClick={onCTAClick}>
-          <Icon name=\"auto_awesome\" size={18} /> Analizar mi CV gratis
+          <Icon name="auto_awesome" size={18} /> Analizar mi CV gratis
         </button>
         <a href="#how-it-works" className="btn-secondary">
-          Ver cómo funciona <Icon name=\"expand_more\" size={18} />
+          Ver cómo funciona <Icon name="expand_more" size={18} />
         </a>
       </div>
 
@@ -87,19 +87,19 @@ function HowItWorks() {
   const steps = [
     {
       number: '1',
-      icon: <Icon name=\"description\" size={22} />,
+      icon: <Icon name="description" size={22} />,
       title: 'Sube tu CV',
       desc: 'Arrastra tu archivo PDF o DOCX. Soportamos todos los formatos de currículum modernos.'
     },
     {
       number: '2',
-      icon: <Icon name=\"psychology\" size={22} />,
+      icon: <Icon name="psychology" size={22} />,
       title: 'La IA lo analiza',
       desc: 'Gemini AI extrae tus habilidades, experiencia y nivel profesional en segundos.'
     },
     {
       number: '3',
-      icon: <Icon name=\"search\" size={22} />,
+      icon: <Icon name="search" size={22} />,
       title: 'Recibe ofertas',
       desc: 'Buscamos en RemoteOK, LinkedIn, Computrabajo y más para encontrar tu match perfecto.'
     }
@@ -249,7 +249,7 @@ function CTASection({ onCTAClick }) {
         <h2>¿Listo para encontrar tu próximo trabajo?</h2>
         <p>Únete a miles de profesionales que ya usan Workia para acelerar su búsqueda laboral. Gratis, sin registro.</p>
         <button className="btn-primary" onClick={onCTAClick}>
-          <Icon name=\"auto_awesome\" size={18} /> Analizar mi CV ahora
+          <Icon name="auto_awesome" size={18} /> Analizar mi CV ahora
         </button>
       </div>
     </div>
@@ -375,7 +375,7 @@ function AppSection({ appRef }) {
               onClick={() => fileInputRef.current?.click()}
             >
               <div className="upload-icon-wrapper">
-                <Icon name=\"cloud_upload\" className=\"upload-icon\" />
+                <Icon name="cloud_upload" className="upload-icon" />
               </div>
               <h3>Sube tu Currículum Vitae</h3>
               <p>Arrastra y suelta aquí, o haz clic para buscar</p>
@@ -420,12 +420,12 @@ function AppSection({ appRef }) {
               <div className="profile-header">
                 <h2>Tu Perfil</h2>
                 <button onClick={handleReset} className="back-btn">
-                  <Icon name=\"arrow_back\" size={14} /> Volver
+                  <Icon name="arrow_back" size={14} /> Volver
                 </button>
               </div>
 
               <div className={`experience-badge ${getExperienceClass(data.profile.experience_level)}`}>
-                <Icon name=\"star\" size={14} />
+                <Icon name="star" size={14} />
                 {data.profile.experience_level}
               </div>
 
@@ -456,7 +456,7 @@ function AppSection({ appRef }) {
             {/* Jobs List */}
             <div>
               <div className="jobs-header">
-                <Icon name=\"work\" size={22} color=\"#6366f1\" />
+                <Icon name="work" size={22} color="#6366f1" />
                 Ofertas Recomendadas
                 <span className="jobs-count">{data.jobs?.length || 0}</span>
               </div>
@@ -474,9 +474,9 @@ function AppSection({ appRef }) {
                       <div className="job-info">
                         <h3>{job.title}</h3>
                         <div className="job-meta">
-                          <span className="meta-item"><Icon name=\"domain\" size={14} /> {job.company}</span>
-                          <span className="meta-item"><Icon name=\"location_on\" size={14} /> {job.location}</span>
-                          <span className="meta-item"><Icon name=\"attach_money\" size={14} /> {job.salary}</span>
+                          <span className="meta-item"><Icon name="domain" size={14} /> {job.company}</span>
+                          <span className="meta-item"><Icon name="location_on" size={14} /> {job.location}</span>
+                          <span className="meta-item"><Icon name="attach_money" size={14} /> {job.salary}</span>
                           <span className="platform-tag">{job.platform}</span>
                         </div>
                         {job.match_reason && (
