@@ -5,7 +5,7 @@ services:
     container_name: workia-backend
     restart: unless-stopped
     env_file:
-      - ./backend/.env
+      - ./.env
     ports:
       - "8000:8000"
     healthcheck:
