@@ -3,7 +3,9 @@ import json
 import logging
 from io import BytesIO
 import PyPDF2
+# pyrefly: ignore [missing-import]
 import docx
+# pyrefly: ignore [missing-import]
 from google import genai
 
 logger = logging.getLogger(__name__)
@@ -13,7 +15,7 @@ FALLBACK_PROFILE = {
     "skills": ["JavaScript", "Python", "React"],
     "experience_level": "Mid",
     "suggested_locations": ["Remoto"],
-    "match_summary": "Perfil tecnológico. (Datos de prueba — configura GEMINI_API_KEY).",
+    "match_summary": "Perfil tecnológico.",
 }
 
 
