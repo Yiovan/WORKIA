@@ -172,6 +172,7 @@ After collecting jobs from all platforms, Workia sends them to Gemini in batches
 
 ---
 
-## License
+[## License
 
 MIT
+](https://workia-self.vercel.app/)
